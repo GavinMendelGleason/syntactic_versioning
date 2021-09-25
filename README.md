@@ -1,7 +1,7 @@
 # What if Git worked with Programming Languages?
 
 I use git most days of the week. And for the great majority of my
-commits, this means committing.
+commits, this means committing *code*.
 
 So why would I say something like *What if Git worked with Programming
 Languages*?
