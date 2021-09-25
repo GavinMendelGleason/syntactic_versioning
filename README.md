@@ -92,7 +92,11 @@ recently adjacent to remain spatially adjacent. Files definitely act
 like this, whereas the SmallTalk approach of putting it in a database
 does not. However we don't have to abandon this structure to also get
 the benefits of structure editors. Lists also retain order and
-adjacency.
+adjacency. There is also the problem of what to do when in a
+syntactically invalid state. But there are ways around this (think
+commit) and some programming environments, (such as
+[agda-mode](https://agda.readthedocs.io/en/v2.6.0.1/tools/emacs-mode.html))
+are good at it.
 
 Editors could really leverage a whole universe of new possibilities if
 they were storing structured documents at commits, rather than merely
