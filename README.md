@@ -71,9 +71,9 @@ syntax, and this syntax is knowable, even in the case of the most
 dynamic of languages (such as those with configurable readers such as
 Common Lisp).
 
-We should be able to leverage this. Or rather we *should* leverage
-this. When we do a diff between two different source programmes, we
-*could* be looking at the alterations to the [abstract syntax
+We should be able to leverage this. When we do a diff between two
+different source programmes, we *could* be looking at the alterations
+to the [abstract syntax
 tree](https://www.andres-loeh.de/GDiff.html). And these diffs can even
 be found and applied
 [efficiently](https://dl.acm.org/doi/10.1145/3341717).
@@ -89,15 +89,18 @@ remained the text file. [Structure
 editors](https://en.wikipedia.org/wiki/Structure_editor) haven't
 really yet taken off despite several
 [historical](https://larrymasinter.net/interlisp-ieee.pdf) and
-[contemporary](https://github.com/JetBrains/MPS) examples. There are
-probably good reasons for this. Humans expect things that they saw
-recently adjacent to remain spatially adjacent. Files definitely act
-like this, whereas the SmallTalk approach of putting it in a database
-does not. However we don't have to abandon this structure to also get
-the benefits of structure editors. Lists also retain order and
-adjacency. There is also the problem of what to do when in a
-syntactically invalid state. But there are ways around this (think
-commit) and some programming environments, (such as
+[contemporary](https://github.com/JetBrains/MPS) attempts.
+
+There are probably some good reasons for this. Humans expect things
+that they saw recently adjacent to remain spatially adjacent. Files
+definitely act like this, whereas the SmallTalk approach of putting it
+in a database does not. However we don't have to abandon this
+structure to also get the benefits of structure editors. Lists also
+retain order and adjacency.
+
+There is also the problem of what to do when in a syntactically
+invalid state. But there are ways around this (think commit) and some
+programming environments, (such as
 [agda-mode](https://agda.readthedocs.io/en/v2.6.0.1/tools/emacs-mode.html))
 are good at it.
 
@@ -114,7 +117,8 @@ text files ceases to be pragmatic when your source tree is several
 hundred thousands or even millions of lines.
 
 It seems to me that there are real advantages to going beyond the
-"lines of text" view of programming languages.
+"lines of text" view of programming languages *in general*, but
+definitely in terms of version control *in particular*.
 
 ## The New (and Old) Data Science Tools
 
@@ -136,11 +140,11 @@ planet, Excel](https://github.com/terminusdb-labs/data_mesh), is one
 of these data-visualisation-programming systems.
 
 Unfortunately, because these new notebooks are *richer* than mere text
-files, they also fight our collaboration tools. Git is significantly
-more painful when working with Jupyter. The more we begin to rely on
-these tools for rapid development of data science analytic results,
-the more we will need advancement on the collaboration and CI/CD
-front.
+files, they also fight with our collaboration tools. Git is
+significantly more painful when working with Jupyter. The more we
+begin to rely on these tools for rapid development of data science
+analytic results, the more we will need advancement of our version
+control tools to help us on the collaboration and CI/CD front.
 
 ## Conclusion
 
@@ -149,5 +153,5 @@ control tools is clear, but is this the end of the story? I wager it
 isn't.
 
 The future will be in structured storage, structured diff, structured
-linting and search and perhaps someday we will finally get our
+linting and search and perhaps someday we will even finally get our
 structure editors.
