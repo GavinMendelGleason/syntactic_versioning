@@ -10,6 +10,10 @@ Well, the title is deliberately provocative, but I genuinely mean it,
 and it's not wrong: Git does *not* work with programming
 languages. Instead it works with source files of text.
 
+The fact that git works on *lines of text* has worked fantastically
+well - better than it has any right too. But is this as far as we can
+go?
+
 ## A Potted History of Version History
 
 I absolutely love git, and I love what it has done to the
@@ -48,34 +52,29 @@ for versioning.
 
 ## Git for programming languages
 
-The fact that git works on *lines of text* has worked fantastically
-well - better than it has any right too. But then our programming
-language editors are also designed as *text editors*, so maybe this
-shouldn't be too surprising.
+The text orientated design of git reflects the old unix philosophy of
+creating simple tools that work generically. And for unix, generic
+meant: files and text (think sed, awk, pipes etc).  Git builds on
+technology that literally goes back to the earliest days of unix, and
+the `diff` program.
 
-The text orientated design reflects the old unix philosophy of
-creating simple tools that work generically. And for unix generic
-meant files and text (think sed, awk, pipes etc).  Git builds on
-technology that literally goes back to the beginning of unix, the
-`diff` program.
-
-In *fact* the current version of git is also able to find differences
-in binary files. But this eschews lines of text for continuous
+The *current* version of git is also able to find differences in
+binary files. But this eschews lines of text for continuous
 strings. This does not represent a *greater* awareness, but rather a
 *lesser* awareness of the *syntax and semantics*.
 
-But programming languages are not really just lines of text. Diffs
-from two different changes to a source file are not necessarily
-composable, even if there are no overlapping changes. Program code has
-syntax, and this syntax is knowable, even in the case of the most
-dynamic of languages (such as those with configurable readers such as
-Common Lisp).
+Programming languages are not really just lines of text. Diffs from
+two different changes to a source file are not necessarily composable,
+even if there are no overlapping changes. Program code has *syntax*,
+and this syntax is knowable, even in the case of the most dynamic of
+languages (such as those with configurable readers such as Common
+Lisp).
 
 We should be able to leverage this. When we do a diff between two
 different source programmes, we *could* be looking at the alterations
 to the [abstract syntax
 tree](https://www.andres-loeh.de/GDiff.html). And these diffs can even
-be found and applied
+be found, communicated and applied
 [efficiently](https://dl.acm.org/doi/10.1145/3341717).
 
 And if we were storing information as ASTs, rather than lines of text,
@@ -104,34 +103,37 @@ programming environments, (such as
 [agda-mode](https://agda.readthedocs.io/en/v2.6.0.1/tools/emacs-mode.html))
 are good at it.
 
-Editors could really leverage a whole universe of new possibilities if
+Editors could benefit from a whole universe of new possibilities if
 they were storing structured documents at commits, rather than merely
-source files. And if you're worried that you need to put some code
-somewhere and you don't know what it is yet, see
+source files. If you're worried that you need to put some code
+somewhere and you don't know what it is yet, this problem can be
+solved with
 [holes](https://jfdm.github.io/post/2020-07-09-Programming-with-holes.html).
 
-And as code bases grow, the need for more sophisticated linting, for
-better approaches to search and retrieval, for looking at all callers,
-etc. becomes more important. What could be done with grep and a few
-text files ceases to be pragmatic when your source tree is several
-hundred thousands or even millions of lines.
+As code bases grow, the need for more sophisticated linting, for
+better approaches to search and retrieval, for looking at all callers
+of a function or procedure, etc. becomes ever more important. What
+could once be done with grep and a few text files ceases to be
+pragmatic when your source tree is several hundred thousands or even
+millions of lines, with elaborate source trees.
 
-It seems to me that there are real advantages to going beyond the
-"lines of text" view of programming languages *in general*, but
-definitely in terms of version control *in particular*.
+There are real advantages to going beyond the "lines of text" view of
+programming languages *in general*, but definitely in terms of version
+control *in particular*.
 
 ## The New (and Old) Data Science Tools
 
-But while there may be advantages as yet unexplored for languages like
+While there may be advantages as yet unexplored for languages like
 python, there is a new class of very widely used *notebooks* such as
 [Jupyter Notebooks](https://jupyter.org/). These tools are
 intermediate between analytic environments and programming
 environments. They store graphics, data and program code together in a
 way that the outcomes can be easily reconstructed. This is a big
-advantage in data-science where you want to share your results. It is
-one of the reasons that JetBrains developed its MPS
-structure-editor. It was to facilitate the creation of domain specific
-languages which could likewise have rich environments.
+advantage in data-science where you want to share your results in a
+visually expressive way. It is also one of the reasons that JetBrains
+developed its MPS structure-editor. It was to facilitate the creation
+of domain specific languages which could likewise have rich
+environments.
 
 And while this new approach to data science feels cutting-edge, if we
 look carefully (and squint our eyes just the right way) we'll
@@ -141,12 +143,13 @@ of these data-visualisation-programming systems.
 
 Unfortunately, because these new notebooks are *richer* than mere text
 files, they also fight with our collaboration tools. Git is
-significantly more painful when working with Jupyter. The more we
-begin to rely on these tools for rapid development of data science
-analytic results, the more we will need advancement of our version
-control tools to help us on the collaboration and CI/CD front.
+significantly more painful when working with Jupyter notebooks than
+with raw python. The more we begin to rely on these tools for rapid
+development of data science analytic results, the more we will need
+advancement of our version control tools to help us on the
+collaboration and CI/CD front.
 
-## Conclusion
+## The Future is Structured
 
 Git's power and advantage over older collaboration and revision
 control tools is clear, but is this the end of the story? I wager it
