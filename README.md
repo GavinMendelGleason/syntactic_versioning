@@ -49,24 +49,27 @@ for versioning.
 ## Git for programming languages
 
 The fact that git works on *lines of text* has worked fantastically
-well. Really better than it has any right too. But then our
-programming language editors are also designed as *text editors*.
+well - better than it has any right too. But then our programming
+language editors are also designed as *text editors*, so maybe this
+shouldn't be too surprising.
 
-The design reflects the old unix philosophy of creating simple tools
-that work generically. And for unix generic meant files and text
-(think sed, awk, pipes etc).  Git builds on technology that literally
-goes back to the beginning of unix, the `diff` program.
+The text orientated design reflects the old unix philosophy of
+creating simple tools that work generically. And for unix generic
+meant files and text (think sed, awk, pipes etc).  Git builds on
+technology that literally goes back to the beginning of unix, the
+`diff` program.
 
 In *fact* the current version of git is also able to find differences
 in binary files. But this eschews lines of text for continuous
 strings. This does not represent a *greater* awareness, but rather a
 *lesser* awareness of the *syntax and semantics*.
 
-But programming languages are not really just lines of text. Not just
-any two programmes are composable by merely pasting lines of text
-together. They have syntax, and this syntax is knowable, even in the
-case of the most dynamic of languages (such as those with configurable
-readers such as Common Lisp).
+But programming languages are not really just lines of text. Diffs
+from two different changes to a source file are not necessarily
+composable, even if there are no overlapping changes. Program code has
+syntax, and this syntax is knowable, even in the case of the most
+dynamic of languages (such as those with configurable readers such as
+Common Lisp).
 
 We should be able to leverage this. Or rather we *should* leverage
 this. When we do a diff between two different source programmes, we
