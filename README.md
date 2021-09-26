@@ -1,6 +1,6 @@
 # What if Git worked with Programming Languages?
 
-I use git most days of the week. And for the great majority of my
+I use git most days of the week. And for the vast majority of my
 commits, this means committing *code*.
 
 So why would I say something like *What if Git worked with Programming
@@ -27,7 +27,7 @@ unconscious mind, only rising to the surface when I'm forced to think
 about the history of revision control.
 
 Git is not without its pains - you'll find yourself knee deep in some
-horendous merge or rebase at some point, confused how to get things
+horrendous merge or rebase at some point, confused how to get things
 working again. But there are so many benefits over what it was like in
 the past that these things are easily excused.
 
@@ -36,23 +36,24 @@ concepts of CI/CD have yielded enormous benefits. They've actually
 made my life better.
 
 But they've also made collaboration better. I'm still learning about
-the potential to improve software develpment on a nearly weekly
+the potential to improve software develpment on a weekly
 basis. In my opinion the well of possibilities in most development
 houses is probably not yet fully tapped.
 
 Automatic testing, including unit tests or even very sophisticated
-integration testing becomes enormously simpler with the ability to
+integration testing, becomes enormously simpler with the ability to
 create the *hypothetical commits* of a pull request. It's essentially
 like having a [modal
 logic](https://en.wikipedia.org/wiki/Possible_world) at our disposal
-for reasoning about correctness.
+for reasoning about correctness. And perhaps someday, these concepts
+will be made [formal](https://dl.acm.org/doi/pdf/10.1145/2661136.2661137).
 
 Yet it would be hubris to think that this is the the end of history
 for versioning.
 
 ## Git for programming languages
 
-The text orientated design of git reflects the old unix philosophy of
+The text-orientated design of git reflects the old unix philosophy of
 creating simple tools that work generically. And for unix, generic
 meant: files and text (think sed, awk, pipes etc).  Git builds on
 technology that literally goes back to the earliest days of unix, and
@@ -68,7 +69,8 @@ two different changes to a source file are not necessarily composable,
 even if there are no overlapping changes. Program code has *syntax*,
 and this syntax is knowable, even in the case of the most dynamic of
 languages (such as those with configurable readers such as Common
-Lisp).
+Lisp). A source file, if it isn't broken, represents a particular
+structured object, an abstract syntax tree.
 
 We should be able to leverage this. When we do a diff between two
 different source programmes, we *could* be looking at the alterations
@@ -86,7 +88,7 @@ language at your disposal to search for problems and perform analysis!
 Of course the *unit of analysis* for programming languages has
 remained the text file. [Structure
 editors](https://en.wikipedia.org/wiki/Structure_editor) haven't
-really yet taken off despite several
+really taken off yet despite several
 [historical](https://larrymasinter.net/interlisp-ieee.pdf) and
 [contemporary](https://github.com/JetBrains/MPS) attempts.
 
@@ -94,7 +96,7 @@ There are probably some good reasons for this. Humans expect things
 that they saw recently adjacent to remain spatially adjacent. Files
 definitely act like this, whereas the SmallTalk approach of putting it
 in a database does not. However we don't have to abandon this
-structure to also get the benefits of structure editors. Lists also
+structure to  get the additional benefits of structure editors. Lists also
 retain order and adjacency.
 
 There is also the problem of what to do when in a syntactically
@@ -132,7 +134,7 @@ way that the outcomes can be easily reconstructed. This is a big
 advantage in data-science where you want to share your results in a
 visually expressive way. It is also one of the reasons that JetBrains
 developed its MPS structure-editor. It was to facilitate the creation
-of domain specific languages which could likewise have rich
+of domain-specific languages which could likewise have rich
 environments.
 
 And while this new approach to data science feels cutting-edge, if we
