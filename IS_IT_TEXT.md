@@ -49,7 +49,7 @@ more sense to use a [persistent data
 structure](https://en.wikipedia.org/wiki/Persistent_data_structure),
 rather than a check-pointed dump.
 
-And a graph database is nearly ideal for storing ASTs. TerminusDB uses
+And a graph database is convenient for storing ASTs. TerminusDB uses
 the idea internally to store the [query
 language](https://github.com/terminusdb/terminusdb/blob/main/src/terminus-schema/woql.json).
 
@@ -68,7 +68,7 @@ case you need to have a system which is able to perform diffs on
 [generic ASTs](https://www.andres-loeh.de/GDiff.html). Plus, you will
 need to be pushing the AST generation further up the chain. This
 allows you to generically support any language that can be represented
-as an AST (I learned on the HN thread, that *perl*
+as an AST.
 
 ## So Text it is
 
