@@ -62,7 +62,7 @@ to do structural diffs inside of git, given that you knew something
 about the syntax of the object you were working with.
 
 However, how do you make a tool that doesn't know anything about the
-syntax of the objects with which you are dealing *apriori*. In this
+syntax of the objects with which you are dealing *a priori*. In this
 case you need to have a system which is able to perform diffs on
 [generic ASTs](https://www.andres-loeh.de/GDiff.html). Plus, you will
 need to be pushing the AST generation further up the chain.
