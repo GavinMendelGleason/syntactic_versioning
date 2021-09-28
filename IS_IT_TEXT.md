@@ -48,6 +48,10 @@ more sense to use a [persistent data
 structure](https://en.wikipedia.org/wiki/Persistent_data_structure),
 rather than a check-pointed dump.
 
+And a graph database is nearly ideal for storing ASTs. TerminusDB uses
+the idea internally to store the [query
+language](https://github.com/terminusdb/terminusdb/blob/main/src/terminus-schema/woql.json).
+
 These aren't just text files after all.
 
 ## Different Diffs
