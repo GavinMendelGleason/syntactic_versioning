@@ -140,8 +140,8 @@ environments.
 And while this new approach to data science feels cutting-edge, if we
 look carefully (and squint our eyes just the right way) we'll
 recognise that the most widely used [programming language on the
-planet, Excel](https://github.com/terminusdb-labs/data_mesh), is one
-of these data-visualisation-programming systems.
+planet, Excel](https://github.com/terminusdb-labs/excel_as_code), is
+one of these data-visualisation-programming systems.
 
 Unfortunately, because these new notebooks are *richer* than mere text
 files, they also fight with our collaboration tools. Git is
