@@ -160,3 +160,10 @@ isn't.
 The future will be in structured storage, structured diff, structured
 linting and search and perhaps someday we will even finally get our
 structure editors.
+
+# Post Script
+
+For those of you interested in the [discussion on Hacker
+News](https://news.ycombinator.com/item?id=28670372), I've written a
+[post-script](./IS_IT_TEXT.md) to respond to some of the points and
+objections.
