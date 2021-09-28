@@ -21,7 +21,8 @@ that the git users experience is precisely about lines of text.
 There are a few cognoscenti on the other hand who *know* that git is
 *not* storing changes to lines of text. This is actually very relevant
 to the *model* of git storage because other revision control systems
-in the past really *did* store diffs as the primary quantum. Git
+in the past really *did* store [diffs as the primary
+quantum](https://en.wikipedia.org/wiki/Source_Code_Control_System). Git
 instead stores collections of hashes which are content addressable to
 entire snapshots. This is a very different, and arguably better,
 model.
@@ -65,7 +66,9 @@ However, how do you make a tool that doesn't know anything about the
 syntax of the objects with which you are dealing *a priori*. In this
 case you need to have a system which is able to perform diffs on
 [generic ASTs](https://www.andres-loeh.de/GDiff.html). Plus, you will
-need to be pushing the AST generation further up the chain.
+need to be pushing the AST generation further up the chain. This
+allows you to generically support any language that can be represented
+as an AST (I learned on the HN thread, that *perl*
 
 ## So Text it is
 
